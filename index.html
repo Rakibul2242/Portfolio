@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Rakibul Islam | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f2f5;
+            color: #333;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .card {
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #0d6efd;
+        }
+
+        /* Extra Styling */
+        /* Extra Styling for Bold and Colorful Text */
+        .text-section h2 {
+            font-size: 3rem;
+            /* Blue color for the main title */
+            font-weight: bold;
+        }
+
+        .text-section h3 {
+            font-size: 2rem;
+            /* Red color for the subtitle */
+            font-weight: bold;
+        }
+
+        .profile-img-style {
+            width: 80%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            box-shadow: 0 0 30px rgba(255, 65, 108, 0.5);
+        }
+
+        .animated-btn1 {
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .animated-btn1:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+        }
+
+        .animated-btn3 {
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .animated-btn3:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        }
+
+
+        .animated-btn2 {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .animated-btn2:hover {
+            transform: rotate(5deg);
+            background-color: #e63946;
+            /* Darker shade of red */
+        }
+
+        .website_visit {
+            border-top-left-radius: 50%;
+        }
+
+        .project-card {
+            overflow: hidden;
+        }
+
+        .project-card img {
+            height: 220px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-card i {
+            transition: transform 0.2s ease;
+        }
+
+        .project-card i:hover {
+            transform: scale(1.1);
+        }
+
+
+
+        /* Slider Container */
+        .projects {
+            position: relative;
+            overflow-x: hidden;
+            padding-bottom: 20px;
+        }
+
+        /* Make the projects row horizontally scrollable */
+        .projects-row {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .project-card-container {
+            width: 32%;
+            margin-right: 1.5%;
+            flex-shrink: 0;
+        }
+
+        .service-card {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 0 5px white;
+        }
+
+        /* Button Styles */
+        .slider-btn {
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 0, 0, 50%);
+            color: white;
+            padding: 10px;
+            border: none;
+            box-shadow: 0 0 5px #ffffff;
+            font-size: 18px;
+            z-index: 10;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        .progress-bar {
+            transition: width 2s ease-in-out;
+        }
+
+        .prev-btn:hover,
+        .next-btn:hover {
+            box-shadow: 0 0 10px #fff;
+            background-color: #c21e2f;
+        }
+
+        .nav-link.active {
+            color: #f44336;
+            /* Red color for active link */
+            font-weight: bold;
+            border-bottom: 2px solid #f44336;
+            /* Bottom border for active link */
+        }
+
+        /* Hover effect for nav links */
+        .nav-links a {
+            position: relative;
+            transition: color 1s ease-in-out;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 3px;
+            background-color: #dc3545;
+            /* Bootstrap's danger color */
+            left: 0;
+            bottom: -4px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #dc3545;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hover effect for logo */
+        .logo h3 {
+            transition: transform 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .logo h3:hover {
+            transform: scale(1.05);
+            color: #dc3545;
+        }
+
+        /* Contact Me button hover */
+        .contact-btn .btn {
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn .btn:hover {
+            background-color: #dc3545;
+            color: #fff;
+            transform: scale(1.05);
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background-color: #303030" ; class="sticky-top shadow-lg">
+        <!-- Header Section -->
+        <section class="container d-flex justify-content-between align-items-center py-3">
+            <div class="logo">
+                <a href="" class="text-decoration-none">
+                    <h3 class="mb-0 text-light"><span class="text-danger">Raki</span>bul</h3>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#protfolio" class="mx-3 text-light fw-semibold text-decoration-none">Portfolio</a>
+                <a href="#skills" class="mx-3 text-light fw-semibold text-decoration-none">Skills</a>
+                <a href="#services" class="mx-3 text-light fw-semibold text-decoration-none">Services</a>
+                <a href="#projects" class="mx-3 text-light fw-semibold text-decoration-none">Projects</a>
+                <a href="#contract" class="mx-3 text-light fw-semibold text-decoration-none">Contract</a>
+            </div>
+            <div class="contact-btn">
+                <a href="#contract" class="fw-semibold btn btn-light border-0">Hire me</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Protfolio Section -->
+    <section class="container d-flex flex-column flex-md-row align-items-center justify-content-between" id="protfolio">
+        <div class="text-section w-50">
+            <h3 class="fw-bold">Hi,</h3>
+            <h2 class="fw-bold">I'm <span class="text-danger">Rakibul</span></h2>
+            <h3 class="fw-bold mb-3">a Fullstack Web Developer</h3>
+
+            <p>I'm a web developer with expertise in front-end and back-end technologies. I build dynamic
+                websites using HTML, CSS, JavaScript, and PHP, focusing on clean, efficient, and user-friendly
+                solutions.</p>
+            </p>
+            <a href="mailto:mdrakibulislam2242@gmail.com" class="btn btn-danger fw-semibold me-2 rounded animated-btn1">Hire Me</a>
+            <a href="#skills" class="btn btn-dark fw-semibold rounded animated-btn3">Experience</a>
+        </div>
+        <div class="profile-image w-50 text-end">
+            <img src="assets/profile-image.jpg" alt="Rakibul's Profile" class="img-fluid rounded-circle shadow-lg">
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="bg-dark" id="about_me">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="profile-image">
+                <img src="assets/profile-image.jpg" alt="Rakibul's Profile"
+                    class="img-fluid ms-4 me-4 rounded-circle profile-img-style" style="width: 80%;">
+            </div>
+            <div class="text-section w-50 text-light">
+                <h4 class="font-weight-bold">About <span class="text-danger">Me</span></h4>
+                <h3 class="font-weight-bold">Fullstack <span class="text-danger">Web Developer</span></h3>
+                <p>I’m a passionate web developer with 3 years of experience in HTML, CSS, JavaScript, jQuery, and
+                    Bootstrap. I also have 2 years of hands-on experience in PHP and MySQL, building dynamic and
+                    responsive websites. My goal is to turn ideas into reality using clean and efficient code.</p>
+                <a href="#projects" class="btn btn-danger fw-semibold me-2 rounded animated-btn2">Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="container" id="skills">
+        <h2 class="text-center mb-4 fw-bold">My <span class="text-danger">Skills</span></h2>
+        <div class="row text-center">
+            <!-- HTML Skill -->
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 shadow-sm border-0 rounded">
+                    <i class="fab fa-html5 fa-2x text-danger"></i>
+                    <h5 class="mt-2 fw-semibold fs-5">HTML</h5>
+                    <p class="text-muted fs-6">3+ Years</p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-danger" style="width: 0%;" role="progressbar" aria-valuenow="90"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CSS Skill -->
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 shadow-sm border-0 rounded">
+                    <i class="fab fa-css3-alt fa-2x text-primary"></i>
+                    <h5 class="mt-2 fw-semibold fs-5">CSS</h5>
+                    <p class="text-muted fs-6">3+ Years</p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-primary" style="width: 0%;" role="progressbar" aria-valuenow="85"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JavaScript Skill -->
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 shadow-sm border-0 rounded">
+                    <i class="fab fa-js fa-2x text-warning"></i>
+                    <h5 class="mt-2 fw-semibold fs-5">JavaScript</h5>
+                    <p class="text-muted fs-6">3+ Years</p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-warning" style="width: 0%;" role="progressbar" aria-valuenow="80"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap Skill -->
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 shadow-sm border-0 rounded">
+                    <i class="fab fa-bootstrap fa-2x text-purple"></i>
+                    <h5 class="mt-2 fw-semibold fs-5">Bootstrap</h5>
+                    <p class="text-muted fs-6">3+ Years</p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-purple" style="width: 0%;" role="progressbar" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHP Skill -->
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 shadow-sm border-0 rounded">
+                    <i class="fas fa-code fa-2x text-secondary"></i>
+                    <h5 class="mt-2 fw-semibold fs-5">PHP</h5>
+                    <p class="text-muted fs-6">2+ Years</p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-secondary" style="width: 0%;" role="progressbar" aria-valuenow="60"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MySQL Skill -->
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 shadow-sm border-0 rounded">
+                    <i class="fas fa-database fa-2x text-success"></i>
+                    <h5 class="mt-2 fw-semibold fs-5">MySQL</h5>
+                    <p class="text-muted fs-6">2+ Years</p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-success" style="width: 0%;" role="progressbar" aria-valuenow="70"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- jQuery Skill -->
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 shadow-sm border-0 rounded">
+                    <i class="fab fa-js-square fa-2x text-info"></i>
+                    <h5 class="mt-2 fw-semibold fs-5">jQuery</h5>
+                    <p class="text-muted fs-6">3+ Years</p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-info" style="width: 0%;" role="progressbar" aria-valuenow="85"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="bg-dark text-light py-5" id="services">
+        <div class="container">
+            <h2 class="text-center mb-4">My <span class="text-danger">Services</span></h2>
+            <div class="row text-center">
+                <!-- Service 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="service-card border border-secondary p-4 rounded">
+                        <i class="fas fa-code fa-3x text-primary"></i>
+                        <h4 class="mt-3">Web Development</h4>
+                        <p>Building responsive and dynamic websites with HTML, CSS, JavaScript, and PHP.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="service-card border border-secondary p-4 rounded">
+                        <i class="fas fa-database fa-3x text-success"></i>
+                        <h4 class="mt-3">Database Management</h4>
+                        <p>Setting up and managing databases using MySQL for dynamic, data-driven websites.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="service-card border border-secondary p-4 rounded">
+                        <i class="fas fa-mobile-alt fa-3x text-info"></i>
+                        <h4 class="mt-3">Responsive Design</h4>
+                        <p>Creating mobile-friendly designs that adapt to different screen sizes and devices.</p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="service-card border border-secondary p-4 rounded">
+                        <i class="fab fa-php fa-3x text-dark"></i>
+                        <h4 class="mt-3">PHP Development</h4>
+                        <p>Developing backend systems with PHP for dynamic functionality and performance.</p>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="service-card border border-secondary p-4 rounded">
+                        <i class="fab fa-js fa-3x text-warning"></i>
+                        <h4 class="mt-3">JavaScript Development</h4>
+                        <p>Adding interactivity and dynamic behavior to websites using JavaScript and jQuery.</p>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="service-card border border-secondary p-4 rounded">
+                        <i class="fab fa-bootstrap fa-3x text-purple"></i>
+                        <h4 class="mt-3">Bootstrap Framework</h4>
+                        <p>Using the Bootstrap framework for rapid and responsive web design development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-5 projects" id="projects">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">Recent <span class="text-danger">Projects</span></h2>
+            <div class="projects">
+                <div class="projects-row" id="projectsRow">
+                    <!-- Project 1 -->
+                    <div class="project-card-container">
+                        <div class="project-card rounded position-relative">
+                            <img src="assets/project 1.png" alt="Project 1" class="img-fluid w-100 rounded">
+                            <div class="position-absolute bottom-0 border-0 end-0 text-light website_visit p-2"
+                                style="background: #F0F2F5;">
+                                <a href="https://yourprojectlink1.com" target="_blank"><i
+                                        class="fas fa-external-link-alt p-2 bg-dark text-light rounded-circle"></i></a>
+                            </div>
+                        </div>
+                        <h6 class="mt-2">Project 1</h6>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card-container">
+                        <div class="project-card rounded position-relative">
+                            <img src="assets/project 2.png" alt="Project 2" class="img-fluid w-100 rounded">
+                            <div class="position-absolute bottom-0 border-0 end-0 text-light website_visit p-2"
+                                style="background: #F0F2F5;">
+                                <a href="https://yourprojectlink2.com" target="_blank"><i
+                                        class="fas fa-external-link-alt p-2 bg-dark text-light rounded-circle"></i></a>
+                            </div>
+                        </div>
+                        <h6 class="mt-2">Project 2</h6>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card-container">
+                        <div class="project-card rounded position-relative">
+                            <img src="assets/project 3.png" alt="Project 3" class="img-fluid w-100 rounded">
+                            <div class="position-absolute bottom-0 border-0 end-0 text-light website_visit p-2"
+                                style="background: #F0F2F5;">
+                                <a href="https://yourprojectlink3.com" target="_blank"><i
+                                        class="fas fa-external-link-alt p-2 bg-dark text-light rounded-circle"></i></a>
+                            </div>
+                        </div>
+                        <h6 class="mt-2">Project 3</h6>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card-container">
+                        <div class="project-card rounded position-relative">
+                            <img src="assets/project 4.png" alt="Project 4" class="img-fluid w-100 rounded">
+                            <div class="position-absolute bottom-0 border-0 end-0 text-light website_visit p-2"
+                                style="background: #F0F2F5;">
+                                <a href="https://yourprojectlink4.com" target="_blank"><i
+                                        class="fas fa-external-link-alt p-2 bg-dark text-light rounded-circle"></i></a>
+                            </div>
+                        </div>
+                        <h6 class="mt-2">Project 4</h6>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card-container">
+                        <div class="project-card rounded position-relative">
+                            <img src="assets/project 2.png" alt="Project 5" class="img-fluid w-100 rounded">
+                            <div class="position-absolute bottom-0 border-0 end-0 text-light website_visit p-2"
+                                style="background: #F0F2F5;">
+                                <a href="https://yourprojectlink5.com" target="_blank"><i
+                                        class="fas fa-external-link-alt p-2 bg-dark text-light rounded-circle"></i></a>
+                            </div>
+                        </div>
+                        <h6 class="mt-2">Project 5</h6>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card-container">
+                        <div class="project-card rounded position-relative">
+                            <img src="assets/project 1.png" alt="Project 6" class="img-fluid w-100 rounded">
+                            <div class="position-absolute bottom-0 border-0 end-0 text-light website_visit p-2"
+                                style="background: #F0F2F5;">
+                                <a href="https://yourprojectlink6.com" target="_blank"><i
+                                        class="fas fa-external-link-alt p-2 bg-dark text-light rounded-circle"></i></a>
+                            </div>
+                        </div>
+                        <h6 class="mt-2">Project 6</h6>
+                    </div>
+                </div>
+                <!-- Prev and Next buttons -->
+                <button class="slider-btn prev-btn rounded-1" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn rounded-1" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="text-light bg-dark text-center">
+        <h2 class="mb-4">Download Resume</h2>
+        <a href="assets/my_resume.pdf" class="btn btn-danger fw-semibold" download>Download PDF</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container text-center" id="contract">
+        <h2 class="fw-bold text-danger">Contact <span class="text-dark">Me</span></h2>
+        <p>Email: <a href="mailto:mdrakibulislam2242@gmail.com">mdrakibulislam2242@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/Rakibul2242" target="_blank">github.com/Rakibul2242</a></p>
+        <div class="social-icons mt-3">
+            <a href="https://www.linkedin.com/in/rakibul2242/" target="_blank" class="text-primary mx-2">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://github.com/Rakibul2242" target="_blank" class="text-dark mx-2">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="https://www.facebook.com/rakibul0224" target="_blank" class="text-primary mx-2">
+                <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="https://www.instagram.com/rakibul0224/" target="_blank" class="text-danger mx-2">
+                <i class="fab fa-instagram fa-2x"></i>
+            </a>
+            <a href="https://x.com/Rakibul_002" target="_blank" class="text-info mx-2">
+                <i class="fab fa-x fa-2x"></i>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Md Rakibul Islam. All Rights Reserved.</p>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            let slideIndex = 0;
+            const projectsPerSlide = 3; // Show 3 projects at a time
+            const totalProjects = $('.projects-row .project-card-container').length;
+
+            // Function to update the visibility of buttons
+            function updateButtons() {
+                if (slideIndex === 0) {
+                    $('#prevBtn').hide(); // Hide "Previous" at the start
+                } else {
+                    $('#prevBtn').show();
+                }
+
+                if (slideIndex >= totalProjects - projectsPerSlide) {
+                    $('#nextBtn').hide(); // Hide "Next" at the end
+                } else {
+                    $('#nextBtn').show();
+                }
+            }
+
+            // Next Button Functionality
+            $('#nextBtn').click(function () {
+                if (slideIndex < totalProjects - projectsPerSlide) {
+                    slideIndex++;
+                    moveSlider();
+                }
+            });
+
+            // Prev Button Functionality
+            $('#prevBtn').click(function () {
+                if (slideIndex > 0) {
+                    slideIndex--;
+                    moveSlider();
+                }
+            });
+
+            // Function to move the slider based on the current slide index
+            function moveSlider() {
+                const offset = -slideIndex * (100 / projectsPerSlide); // Calculate the offset
+                $('.projects-row').css('transform', 'translateX(' + offset + '%)');
+                updateButtons(); // Update the visibility of the buttons
+            }
+
+            // Initial call to update button visibility
+            updateButtons();
+
+            function animateProgressBars() {
+                $('.progress-bar').each(function () {
+                    // Check if element is in view
+                    var bar = $(this);
+                    var barTop = bar.offset().top;
+                    var windowBottom = $(window).scrollTop() + $(window).height();
+
+                    if (windowBottom > barTop && !bar.hasClass('animated')) {
+                        bar.addClass('animated');
+                        var finalWidth = bar.attr('aria-valuenow') + '%';
+                        bar.animate({
+                            width: finalWidth
+                        }, 1000);
+                    }
+                });
+            }
+
+            // Run on scroll and on page load
+            $(window).on('scroll', animateProgressBars);
+            animateProgressBars(); // Initial check
+            // When the user scrolls, call this function
+            $(window).scroll(function () {
+                let scrollPosition = $(window).scrollTop();
+
+                // Check each section
+                $('section').each(function () {
+                    let sectionOffset = $(this).offset().top;
+                    let sectionHeight = $(this).outerHeight();
+
+                    // If the section is in view, activate the corresponding nav-link
+                    if (scrollPosition >= sectionOffset - 50 && scrollPosition < sectionOffset + sectionHeight - 50) {
+                        let id = $(this).attr('id');
+                        $('.nav-link').removeClass('active'); // Remove active class from all
+                        $('a[href="#' + id + '"]').addClass('active'); // Add active class to the corresponding link
+                    }
+                });
+            });
+
+            // Optional: Smooth scroll to sections when clicking nav links
+            $('a.nav-link').on('click', function (e) {
+                e.preventDefault();
+                let target = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top
+                }, 500); // 500ms smooth scroll
+            });
+
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
