@@ -238,7 +238,38 @@
             background-color: #dc3545;
             color: #fff;
             transform: scale(1.05);
-            
+
+        }
+        @media (max-width: 767px) {
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .protfolio .text-section,
+            .about_me .container .text-section {
+                width: 100% !important;
+            }
+
+            .protfolio .profile-image {
+                display: none;
+            }
+
+            .about_me .container {
+                flex-direction: column;
+
+            }
+
+            .about_me .container .profile-image {
+                text-align: center;
+                margin-bottom: 50px;
+
+
+            }
+
+            .project-card img {
+                height: 100px;
+            }
         }
     </style>
 </head>
@@ -266,7 +297,8 @@
     </div>
 
     <!-- Protfolio Section -->
-    <section class="container d-flex flex-column flex-md-row align-items-center justify-content-between" id="protfolio">
+    <section class="container d-flex flex-column flex-md-row align-items-center justify-content-between protfolio"
+        id="protfolio">
         <div class="text-section w-50">
             <h3 class="fw-bold">Hi,</h3>
             <h2 class="fw-bold">I'm <span class="text-danger">Rakibul</span></h2>
@@ -276,7 +308,8 @@
                 websites using HTML, CSS, JavaScript, and PHP, focusing on clean, efficient, and user-friendly
                 solutions.</p>
             </p>
-            <a href="mailto:mdrakibulislam2242@gmail.com" class="btn btn-danger fw-semibold me-2 rounded animated-btn1">Hire Me</a>
+            <a href="mailto:mdrakibulislam2242@gmail.com"
+                class="btn btn-danger fw-semibold me-2 rounded animated-btn1">Hire Me</a>
             <a href="#skills" class="btn btn-dark fw-semibold rounded animated-btn3">Experience</a>
         </div>
         <div class="profile-image w-50 text-end">
@@ -285,7 +318,7 @@
     </section>
 
     <!-- About Me Section -->
-    <section class="bg-dark" id="about_me">
+    <section class="bg-dark about_me" id="about_me">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="profile-image">
                 <img src="assets/profile-image.jpg" alt="Rakibul's Profile"
@@ -470,7 +503,8 @@
                     <!-- Project 1 -->
                     <div class="project-card-container">
                         <div class="project-card rounded position-relative">
-                            <img src="assets/project_images/W3School_Home.png" alt="Project 1" class="img-fluid w-100 rounded">
+                            <img src="assets/project_images/W3School_Home.png" alt="Project 1"
+                                class="img-fluid w-100 rounded">
                             <div class="position-absolute bottom-0 border-0 end-0 text-light website_visit p-2"
                                 style="background: #F0F2F5;">
                                 <a href="https://rakibul2242.github.io/W3School_Home/" target="_blank"><i
@@ -483,7 +517,8 @@
                     <!-- Project 2 -->
                     <div class="project-card-container">
                         <div class="project-card rounded position-relative">
-                            <img src="assets/project_images/customwebsite.png" alt="Project 2" class="img-fluid w-100 rounded">
+                            <img src="assets/project_images/customwebsite.png" alt="Project 2"
+                                class="img-fluid w-100 rounded">
                             <div class="position-absolute bottom-0 border-0 end-0 text-light website_visit p-2"
                                 style="background: #F0F2F5;">
                                 <a href="https://rakibul2242.github.io/customwebsite/" target="_blank"><i
@@ -496,7 +531,8 @@
                     <!-- Project 3 -->
                     <div class="project-card-container">
                         <div class="project-card rounded position-relative">
-                            <img src="assets/project_images/portfolio-web-Tarik_Billa.png" alt="Project 3" class="img-fluid w-100 rounded">
+                            <img src="assets/project_images/portfolio-web-Tarik_Billa.png" alt="Project 3"
+                                class="img-fluid w-100 rounded">
                             <div class="position-absolute bottom-0 border-0 end-0 text-light website_visit p-2"
                                 style="background: #F0F2F5;">
                                 <a href="https://rakibul2242.github.io/portfolio-web-Tarik_Billa/" target="_blank"><i
@@ -509,7 +545,8 @@
                     <!-- Project 4 -->
                     <div class="project-card-container">
                         <div class="project-card rounded position-relative">
-                            <img src="assets/project_images/Envato-Market.png" alt="Project 4" class="img-fluid w-100 rounded">
+                            <img src="assets/project_images/Envato-Market.png" alt="Project 4"
+                                class="img-fluid w-100 rounded">
                             <div class="position-absolute bottom-0 border-0 end-0 text-light website_visit p-2"
                                 style="background: #F0F2F5;">
                                 <a href="https://rakibul2242.github.io/Envato-Market/" target="_blank"><i
